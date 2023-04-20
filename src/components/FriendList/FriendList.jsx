@@ -1,23 +1,38 @@
 import PropTypes from 'prop-types';
+import { FriendListItem } from './FriendListItem';
 
 export const FriendList = ({ friends }) => {
     return (
-    <ul className="friend-list">
-{/* {friends.map(({id, avatar, name, isOnline}) => (
-    <li className="item">{id}
-    <span className="status">{isOnline}</span>
-    <img className="avatar" src={avatar} alt="User avatar" width="48" />
-    <p className="name">{name}</p>
-  </li>
-)
-)} */}
-
+        <ul className="friend-list">
+            {friends.map(({id, avatar, name, isOnline}) => { 
+                return (
+                    <FriendListItem key={id}
+                        id={id}
+                        avatar={avatar}
+                        name={ name }
+                        isOnline={ isOnline }/>)
+                
+            })}
     </ul>
     )
 
 }
 
 
+// FriendList.propTypes = {
+//     friends: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.number.isRequired,
+//             avatar: PropTypes.string.isRequired,
+//             name: PropTypes.string.isRequired,
+//             isOnline: PropTypes.bool.isRequired,
+//           })
+//         ).isRequired,
+// };
 FriendList.propTypes = {
-    friends: PropTypes.array.isRequired
-};
+    friends: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+      })
+    ),
+  };
