@@ -4,25 +4,25 @@ export const ProfileBlock = styled.div`
   width: 300px;
   border-radius: 0px;
   background: #f0efef;
-  box-shadow: 32px 32px 64px #afaeae, -32px -32px 64px #ffffff;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 15px;
-  margin-top: 15px;
+  margin-top: 30px;
   background-color: white;
   
 `;
 
 export const Description = styled.div`
-    background-color: $color-accent;
-    border-radius: 0px 0px 4px 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: $color-accent;
+  border-radius: 0px 0px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 `;
 export const Avatar = styled.img`
@@ -55,6 +55,7 @@ export const StatsList = styled.ul`
   width: 100%;
   padding-left: 0px;
   background-color: #f0efef;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
 `;
 
 export const StatsItem = styled.li`
