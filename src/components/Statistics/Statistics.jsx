@@ -9,9 +9,9 @@ import {
 export const Statistics = ({title, stats}) => {
     return (
 <StatisticsBlock>
-  <StatsTitle>{title}</StatsTitle>
-  <StatsList>
+  {title && <StatsTitle>{title}</StatsTitle>}
 
+  <StatsList>
  {stats.map(({ id, label, percentage }) => (
         <StatsItem key={id}>
         <StatsLabel>{label}</StatsLabel>
@@ -26,7 +26,19 @@ export const Statistics = ({title, stats}) => {
     )
 }
 
+
 Statistics.propTypes = {
-    title: PropTypes.string.isRequired,
-    stats: PropTypes.array.isRequired
+  title: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
+
+// Statistics.propTypes = {
+//     title: PropTypes.string.isRequired,
+//     stats: PropTypes.array.isRequired
+// };
